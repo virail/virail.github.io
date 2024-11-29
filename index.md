@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ## 03/10/2024
 
 - Forgot to log but I think I started working on setting up email requests for native along with a login
