@@ -11,7 +11,18 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        grey: "#3b3b3b",
+        light: {
+          grey: "#dbdbdb",
+          white: "#f7f6ee",
+        },
       },
+      fontFamily: {
+        serif: ["var(--font-dm-serif-text)"]
+      },
+      padding: {
+        basic: "0.5rem 1rem",
+      }
     },
   },
   plugins: [],
