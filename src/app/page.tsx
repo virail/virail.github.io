@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Card from "./components/card";
+import CustomCursor from "./components/custom_cursor";
 
 
 export default function Home() {
@@ -32,39 +33,42 @@ export default function Home() {
 		})
 		
 		document.addEventListener('scroll', () => { document.body.style.setProperty('--scroll', window.scrollY / (document.body.offsetHeight - window.innerHeight))}, false)
-		const moveGradient = (event) => {
-			const winWidth = window.innerWidth;
-			const winHeight = window.innerHeight;
+		// const moveGradient = (event) => {
+		// 	const winWidth = window.innerWidth;
+		// 	const winHeight = window.innerHeight;
 
-			const mouseX = Math.round((event.clientX / winWidth) * 100);
-			const mouseY = Math.round((event.clientY / winHeight) * 100);
+		// 	const mouseX = Math.round((event.clientX / winWidth) * 100);
+		// 	const mouseY = Math.round((event.clientY / winHeight) * 100);
 
-			// const mouseX = event.clientX;
-			// const mouseY = event.clientY;
+		// 	// const mouseX = event.clientX;
+		// 	// const mouseY = event.clientY;
 
-			if (appRef) {
-				appRef.current.style.setProperty(
-					'--mouse-x',
-					mouseX.toString() + "px"
-				);
-				appRef.current.style.setProperty(
-					'--mouse-y',
-					mouseY.toString() + "px"
-				);
-			}
-		}
+		// 	if (appRef) {
+		// 		appRef.current.style.setProperty(
+		// 			'--mouse-x',
+		// 			mouseX.toString() + "px"
+		// 		);
+		// 		appRef.current.style.setProperty(
+		// 			'--mouse-y',
+		// 			mouseY.toString() + "px"
+		// 		);
+		// 	}
+		// }
 		
-		document.addEventListener('mousemove', moveGradient);
+		// document.addEventListener('mousemove', moveGradient);
 
 		return () => {
-			document.removeEventListener('mousemove', moveGradient);
+			// document.removeEventListener('mousemove', moveGradient);
 			observer.disconnect();
 		}
 	}, [appRef])
 	return (
 		<div ref={appRef} id="app" className="app">
-			<p className="text-grey font-bold text-2xl text-center self-center align-middle font-[family-name:var(--font-dm-serif-display)] p-basic pb-0 fadeInUp text-shadow">Hi I&apos;m James Bridge</p>
-			<p className="text-grey text-base text-center self-center align-middle">Junior Developer @ Warren James Jewellers</p>
+			<CustomCursor />
+			<div data-animate="">
+				<p className="text-grey font-bold text-2xl text-center self-center align-middle font-[family-name:var(--font-dm-serif-display)] p-basic pb-0 text-shadow">Hi I&apos;m James Bridge</p>
+				<p className="text-grey font-serif font-thin text-base text-center self-center align-middle mb-2">Junior Developer @ Warren James Jewellers</p>
+			</div>
 			<div className="grid grid-cols-2 gap-8 px-8">
 				<Card title="test">
 					<p className="text-grey p-basic font-serif">
