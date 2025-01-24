@@ -3,11 +3,13 @@
 import { useEffect, useRef } from "react";
 import Card from "./components/card";
 import CustomCursor from "./components/custom_cursor";
-
+import { motion } from 'motion/react';
+import { useRouter } from "next/navigation";
 
 export default function Home() {
 
 	const appRef = useRef(null);
+	const router = useRouter();
 
 	useEffect(() => {
 
@@ -65,9 +67,18 @@ export default function Home() {
 	return (
 		<div ref={appRef} id="app" className="app">
 			<CustomCursor />
-			<div data-animate="">
+			<div data-animate="" className="">
 				<p className="text-grey font-bold text-2xl text-center self-center align-middle font-[family-name:var(--font-dm-serif-display)] p-basic pb-0 text-shadow">Hi I&apos;m James Bridge</p>
 				<p className="text-grey font-serif font-thin text-base text-center self-center align-middle mb-2">Junior Developer @ Warren James Jewellers</p>
+				<motion.button
+					whileHover={{ scale: 1.05, background: '#eeeeee', color: '#3d3d3d'}}
+					whileTap={{ scale: 0.95 }}
+					transition={{ ease: "easeIn"}}
+					className="bg-grey font-[family-name:var(--font-space-mono)] rounded-lg p-2 px-4 text-xl tracking-wider border-[1px] border-black w-50"
+					onClick={() => router.push('/anim')}
+				>
+					ANIMATION
+				</motion.button>
 			</div>
 			<div className="grid grid-cols-2 gap-8 px-8">
 				<Card title="test">
