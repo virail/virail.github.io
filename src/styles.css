@@ -1,0 +1,47 @@
+* {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    font-family: system-ui;
+}
+
+:root {
+    --padding: 8px;
+    --border-radius: calc(2 * var(--padding));
+}
+
+.app {
+    height: calc(100dvh - 2 * var(--padding));
+    width: (100dvw - 2 * var(--padding));
+    padding: var(--padding);
+    background-image: linear-gradient(to bottom right, white, #afaaaa);
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--padding);
+    row-gap: var(--padding);
+}
+
+.main-grid .grid-item {
+    border: 2px solid;
+    border-color: #323240;
+    border-radius: 8px 8px 8px 8px;
+    padding: var(--padding);
+
+    transition-property: transform;
+    transition-duration: 250ms;
+}
+
+.main-grid .grid-item:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    background-color: white;
+    padding: var(--padding);
+    min-height: 100px;
+    min-width: 100px;
+    border-radius: var(--border-radius);
+    box-shadow: 2.5px 5px 5px 0px rgba(0,0,0,0.1);
+}
