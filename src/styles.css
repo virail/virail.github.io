@@ -1,19 +1,95 @@
 * {
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
-    font-family: system-ui;
+}
+
+/* Iosevka */
+@font-face {
+    font-family: 'Iosevka';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/iosevka@latest/latin-400-normal.woff2) format('woff2'), url(https://cdm.jsdelivr.net/fontsource/fonts/iosevka@latest/latin-400-normal.woff) format('woff');
+}
+
+/* iosevka-latin-700-normal */
+@font-face {
+  font-family: 'Iosevka';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/iosevka@latest/latin-700-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/iosevka@latest/latin-700-normal.woff) format('woff');
+}
+
+/* inter-latin-wght-normal */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* space-mono-latin-400-normal */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/space-mono@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/space-mono@latest/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* mansalva-latin-400-normal */
+@font-face {
+  font-family: 'Mansalva';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/mansalva@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/mansalva@latest/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* silkscreen-latin-400-normal */
+@font-face {
+  font-family: 'Silkscreen';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/silkscreen@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/silkscreen@latest/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* silkscreen-latin-700-normal */
+@font-face {
+  font-family: 'Silkscreen';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/silkscreen@latest/latin-700-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/silkscreen@latest/latin-700-normal.woff) format('woff');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 
 :root {
     --padding: 8px;
-    --border-radius: calc(2 * var(--padding));
+    --border-radius: 8px;
+    --outer-border-radius: calc(2 * var(--padding));
+    --bg-colour: #0a0d0f;
+    --bg-lighter: #1a1d1f;
+    --gap: 8px;
+    --text-colour: #ffffff;
+    --hover-scale: 1.05;
+    --inset-colour: rgba(75, 75, 75, 0.5);
+    --subtext-colour: rgba(75,75,75,1.0);
+    color: var(--text-colour);
 }
 
 .app {
     height: calc(100dvh - 2 * var(--padding));
     width: (100dvw - 2 * var(--padding));
     padding: var(--padding);
-    background-image: linear-gradient(to bottom right, white, #afaaaa);
+    background-image: linear-gradient(to bottom right, var(--bg-colour), var(--bg-lighter));
 }
 
 .main-grid {
@@ -34,16 +110,23 @@
 }
 
 .main-grid .grid-item:hover {
-    transform: scale(1.05);
+    transform: scale(var(--hover-scale));
 }
 
 .card {
-    background-color: white;
-    padding: var(--padding);
+    background-color: var(--bg-colour);
+    padding: calc(var(--padding) * 2);
     min-height: 100px;
     min-width: 100px;
     border-radius: var(--border-radius);
-    box-shadow: 2.5px 5px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 20px -10px rgba(0,0,0,1.0), inset 0px 0px 20px 0px var(--inset-colour);
+}
+
+.card > :not(:last-child) {
+    --spacing-reverse: 0;
+    --spacing: 32px;
+    margin-block-start: calc(var(--spacing) * var(--spacing-reverse));
+    margin-block-end: calc(var(--spacing) * (1 - var(--spacing-reverse)));
 }
 
 .central-header {
@@ -76,6 +159,13 @@
     }
 }
 
+.sub-heading {
+    font-family: Iosevka;
+    font-size: 48px;
+    font-weight: bold;
+    text-wrap: balance;
+}
+
 .personal-links {
     display: flex;
     flex-direction: row;
@@ -83,4 +173,98 @@
     align-items: center;
     height: 10px;
     width: 100%;
+}
+
+.tag-heading {
+    font-family: 'Space Mono';
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.tag {
+    font-family: 'Inter Variable';
+    background-color: var(--bg-colour);
+    padding: calc(var(--padding));
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 20px -10px rgba(0,0,0,1.0), inset 0px 0px 10px 0px var(--inset-colour);
+}
+
+.col-span-4 {
+    grid-column: span 4 / span 4;
+}
+
+.col-span-8 {
+    grid-column: span 8 / span 8;
+}
+
+.row-span-2 {
+    grid-row: span 2 / span 2;
+}
+
+.row-span-4 {
+    grid-row: span 4 / span 4;
+}
+
+.row-span-8 {
+    grid-row: span 8 / span 8;
+}
+
+.bento-box {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: calc(var(--gap) * 2);
+    margin: var(--padding);
+}
+
+.profile {
+    font-family: 'Iosevka';
+}
+
+.profile-picture {
+    min-width: 72px;
+    min-height: 72px;
+    max-width: 72px;
+    max-height: 72px;
+    background-color: #2a2b2c;
+}
+
+.profile-alias {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+}
+
+.profile-names {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.profile-body {
+    font-family: Mansalva;
+    font-weight: 700;
+}
+
+.profile-footer {
+    font-family: Silkscreen;
+    color: var(--subtext-colour);
+}
+
+@keyframes pulse {
+    0% { opacity: 0; }
+    25%, 75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.pulse {
+    font-family: Iosevka;
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
 }
