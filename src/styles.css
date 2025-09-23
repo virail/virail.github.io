@@ -86,10 +86,14 @@
 }
 
 .app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: calc(100dvh - 2 * var(--padding));
     width: (100dvw - 2 * var(--padding));
     padding: var(--padding);
     background-image: linear-gradient(to bottom right, var(--bg-colour), var(--bg-lighter));
+    box-shadow: inset 0px 0px 5px 0px white;
 }
 
 .main-grid {
@@ -116,15 +120,30 @@
 .card {
     background-color: var(--bg-colour);
     padding: calc(var(--padding) * 2);
-    min-height: 100px;
-    min-width: 100px;
+    /* min-height: 100px; */
+    /* min-width: 100px; */
     border-radius: var(--border-radius);
     box-shadow: 0px 0px 20px -10px rgba(0,0,0,1.0), inset 0px 0px 20px 0px var(--inset-colour);
+    font-family: Iosevka;
+    overflow: auto;
+}
+
+.svg {
+    padding: var(--padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card > svg {
+    width: 100%;
+    height: 100%;
+    grid-column: span 1 / span 2;
 }
 
 .card > :not(:last-child) {
     --spacing-reverse: 0;
-    --spacing: 32px;
+    --spacing: 16px;
     margin-block-start: calc(var(--spacing) * var(--spacing-reverse));
     margin-block-end: calc(var(--spacing) * (1 - var(--spacing-reverse)));
 }
@@ -193,6 +212,10 @@
     box-shadow: 0px 0px 20px -10px rgba(0,0,0,1.0), inset 0px 0px 10px 0px var(--inset-colour);
 }
 
+.col-span-2 {
+    grid-column: span 2 / span 2;
+}
+
 .col-span-4 {
     grid-column: span 4 / span 4;
 }
@@ -214,9 +237,11 @@
 }
 
 .bento-box {
+    max-width: 80dvh;
+    max-height: 80dvh;
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     gap: calc(var(--gap) * 2);
     margin: var(--padding);
 }
@@ -225,11 +250,23 @@
     font-family: 'Iosevka';
 }
 
+.profile-picture-container {
+    border-radius: calc(var(--border-radius) * 2.5);
+    background-color: var(--inset-colour);
+    align-items: center;
+    display: flex;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
 .profile-picture {
     min-width: 72px;
     min-height: 72px;
     max-width: 72px;
     max-height: 72px;
+    border-radius: calc(var(--border-radius) * 3);
     background-color: #2a2b2c;
 }
 
