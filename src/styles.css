@@ -306,3 +306,26 @@
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
 }
+
+.built-with-container {
+    grid-column: span 4 / span 4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: var(--gap);
+}
+
+.button-link {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    transition: all 250ms;
+}
+
+.button-link:hover {
+    transform: scale(var(--hover-scale));
+    transition: all 0ms;
+}
