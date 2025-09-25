@@ -10,17 +10,18 @@
         <div class="app">
             <div class="bento-box fade-in">
                 <!-- <h1 class="header">Welcome!</h1> -->
-                <div class="card col-span-4 row-span-8">
+                <div class="card col-span-4 row-span-8 translate-up">
                     <h3 class="sub-heading">{}<br />TECH STACK</h3>
                     <div class="">
                         <h4 class="tag-heading">Frontend:</h4>
                         <div class="tag-list">
-                            <p class="tag">React</p>
+                            <div class="">
+                                <p class="tag">React</p>
+                            </div>
                             <p class="tag">Next.js</p>
                             <p class="tag">Shadcn</p>
                             <p class="tag">TailwindCSS</p>
                             <p class="tag">Framer-Motion</p>
-                            <p class="tag">Tanstack Query</p>
                             <p class="tag">Zod</p>
                             <p class="tag">React-Hook-Forms</p>
                         </div>
@@ -71,9 +72,9 @@
                             "How do I center a div again??"
                         </p>
                         <span class="">
-                            <svg viewBox="0 0 10 10" width="10px" height="10px">
-                                <circle class="pulse" fill="#22aa22" r="5" cx="5" cy="5" />
-                            </svg>
+                            <!-- <svg viewBox="0 0 10 10" width="10px" height="10px"> -->
+                            <!--     <circle class="pulse" fill="#22aa22" r="5" cx="5" cy="5" /> -->
+                            <!-- </svg> -->
                             <span class="pulse" style="color: #22aa22;">&bull;</span>
                             Available for work<br />
                             <span id="current-time" class="" />
@@ -87,30 +88,54 @@
                     <div class="card svg">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <title>HTML5 Logo</title>
-                            <path fill="white" d="M108.4 0h23v22.8h21.2V0h23v69h-23V46h-21v23h-23.2M206 23h-20.3V0h63.7v23H229v46h-23M259.5 0h24.1l14.8 24.3L313.2 0h24.1v69h-23V34.8l-16.1 24.8l-16.1-24.8v34.2h-22.6M348.7 0h23v46.2h32.6V69h-55.6" />
-                            <path fill="rgba(255,255,255,0.8)" d="M107.6 471l-33-370.4h362.8l-33 370.2L255.7 512"/>
-                            <path fill="white" d="M256 480.5V131H404.3L376 447"/>
-                            <path fill="#0a0d0f" d="M142 176.3h114v45.4h-64.2l4.2 46.5h60v45.3H154.4M156.4 336.3H202l3.2 36.3 50.8 13.6v47.4l-93.2-26"/>
-                            <path fill="rgba(0,0,0,0.8)" d="M369.6 176.3H255.8v45.4h109.6M361.3 268.2H255.8v45.4h56l-5.3 59-50.7 13.6v47.2l93-25.8"/>
+                            <path fill="var(--main-colour)" d="M108.4 0h23v22.8h21.2V0h23v69h-23V46h-21v23h-23.2M206 23h-20.3V0h63.7v23H229v46h-23M259.5 0h24.1l14.8 24.3L313.2 0h24.1v69h-23V34.8l-16.1 24.8l-16.1-24.8v34.2h-22.6M348.7 0h23v46.2h32.6V69h-55.6" />
+                            <path fill="var(--main-colour)" d="M107.6 471l-33-370.4h362.8l-33 370.2L255.7 512"/>
+                            <path fill="var(--sub-colour)" d="M256 480.5V131H404.3L376 447"/>
+                            <path fill="rgba(255,255,255,0.5)" d="M142 176.3h114v45.4h-64.2l4.2 46.5h60v45.3H154.4M156.4 336.3H202l3.2 36.3 50.8 13.6v47.4l-93.2-26"/>
+                            <path fill="rgba(255,255,255,0.8)" d="M369.6 176.3H255.8v45.4h109.6M361.3 268.2H255.8v45.4h56l-5.3 59-50.7 13.6v47.2l93-25.8"/>
                         </svg>
                     </div>
                     <div class="card svg">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630">
-                            <rect width="630" height="630" fill="white" rx="30" ry="30" />
-                            <path fill="#0a0d0f "d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z"/>
+                            <rect width="630" height="630" fill="var(--main-colour)" rx="30" ry="30" />
+                            <path fill="white"d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z"/>
                         </svg>
                     </div>
                     <a href="https://www.github.com/virail" target="_blank" class="card button-link svg">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 96" width="100%" height="100%">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#fff"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="var(--main-colour)"/>
                         </svg>
                     </a>
+                    <div class="card svg">
+                        <svg width="100%" height="100%" viewBox="0 0 214 214" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                            <title>neovim-logo@2x</title>
+                            <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+                            <defs>
+                                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+                                    <stop stop-color="var(--main-colour)" stop-opacity="0.800235524" offset="0%"/>
+                                    <stop stop-color="var(--sub-colour)" stop-opacity="0.83700023" offset="100%"/>
+                                </linearGradient>
+                                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+                                    <stop stop-color="var(--main-colour)" offset="0%"/>
+                                    <stop stop-color="var(--main-colour)" offset="100%"/>
+                                </linearGradient>
+                                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+                                    <stop stop-color="var(--main-colour)" stop-opacity="0.8" offset="0%"/>
+                                    <stop stop-color="var(--main-colour)" stop-opacity="0.84" offset="100%"/>
+                                </linearGradient>
+                            </defs>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                <g id="mark" sketch:type="MSLayerGroup" transform="translate(1.000000, 1.000000)">
+                                    <path d="M0.0271406286,45.4585443 L45.2236471,-0.172976207 L45.2236462,211.998335 L0.0271406286,166.893838 L0.0271406286,45.4585443 Z" id="Left---green" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup"/>
+                                    <path d="M129.336706,45.889361 L175.152342,-0.148332039 L174.223646,211.998335 L129.027141,166.893838 L129.336706,45.889361 Z" id="Right---blue" fill="url(#linearGradient-2)" sketch:type="MSShapeGroup" transform="translate(152.000000, 106.000000) scale(-1, 1) translate(-152.000000, -106.000000) "/>
+                                    <path d="M45.1935106,-0.136678135 L162.699692,179.17338 L129.817917,212.054331 L12.2502441,33.141173 L45.1935106,-0.136678135 Z" id="Cross---blue" fill="url(#linearGradient-3)" sketch:type="MSShapeGroup"/>
+                                    <path d="M45.2339478,83.0321045 L45.1714478,90.0946045 L8.89086914,36.5321045 L12.2502441,33.1099243 L45.2339478,83.0321045 Z" id="Shadow" fill-opacity="0.13" fill="#000000" sketch:type="MSShapeGroup"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
             </div>
-            <!-- <div class="card main-grid"> -->
-            <!--     <p class="grid-item">Testing</p> -->
-            <!--     <p class="grid-item">Second Element</p> -->
-            <!-- </div> -->
         </div>
         <script src="script.js"></script>
     </body>
