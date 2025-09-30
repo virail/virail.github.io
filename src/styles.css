@@ -377,3 +377,13 @@
     background-image: conic-gradient(red, blue, green, red);
 }
 
+.graph-container {
+    grid-column: span 5 / span 5;
+    grid-row: span 2 / span 2;
+}
+
+.graph-container > canvas {
+    border: solid var(--border-width) var(--main-colour);
+    width: 100%;
+    height: 100%;
+}
