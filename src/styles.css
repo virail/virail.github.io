@@ -187,6 +187,12 @@
     .header {
         font-size: 5rem;
     }
+
+    .bento-box {
+        max-width: 90dvw !important;
+        max-height: 90dvh !important;
+    }
+
 }
 
 .sub-heading {
