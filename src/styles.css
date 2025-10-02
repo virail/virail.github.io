@@ -2,6 +2,7 @@
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
     overscroll-behavior: none;
+    box-sizing: border-box;
 }
 
 /* Iosevka */
@@ -389,6 +390,17 @@
 }
 
 .graph-container > canvas {
+    border: solid var(--border-width) var(--main-colour);
+    width: 100%;
+    height: 100%;
+}
+
+.svg-graph-container {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+}
+
+.svg-graph-container > svg {
     border: solid var(--border-width) var(--main-colour);
     width: 100%;
     height: 100%;
