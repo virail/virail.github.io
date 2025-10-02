@@ -12,9 +12,26 @@ window.onload = function() {
     console.log(style.getPropertyValue('--main-colour'));
 
     ctx.fillStyle = style.getPropertyValue('--main-colour');
-    const points = generateRandomPoints(10, width, height);
+    const points = generateRandomPoints(12, width, height);
     points.sort((a, b) => a[0] - b[0]);
     console.log(points);
+    // We have sorted points along x
+    // Now we need to perform quadratic bezier curves on this
+    // so we grab tuples of 3 points, start, control, end
+    let finalPoints = [];
+    for (let i = 0; i < points.length - 2; i++) {
+        const start = points[i];
+        const control = points[i + 1];
+        const end = points[i + 2];
+
+        for (let t = 0; t <= 1.0; t += 0.1) {
+            const bezier = getPointOnQuadraticBezierCurveOptimised(start, control, end, t);
+            finalPoints.push(bezier);
+        }
+    }
+    finalPoints.sort((a, b) => a[0] - b[0])
+    console.log("finalPoints",finalPoints);
+    // and we draw these points
     ctx.lineWidth = 2;
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
@@ -23,8 +40,9 @@ window.onload = function() {
     ctx.strokeStyle = mainColour;
     ctx.beginPath();
     let maxY = 0;
-    for (const [x, y] of points) {
+    for (const [x, y] of finalPoints) {
         maxY = Math.max(maxY, y);
+        // ctx.strokeStyle=`oklch(${x} 0.5 120)`;
         ctx.lineTo(x, y);
     }
     ctx.stroke();
@@ -92,4 +110,15 @@ function generateAreaPoints(points, blockWidth, blockHeight) {
     }
     console.log("blocks",blocks);
     return blocks;
+}
+
+function getPointOnQuadraticBezierCurveOptimised(startPoint, controlPoint, endPoint, ratio) {
+    const remainder = 1 - ratio;
+    const startPointMultiplier = remainder * remainder;
+    const controlPointMultiplier = remainder * ratio * 2;
+    const endPointMultiplier = ratio * ratio;
+    return [
+        startPoint[0] * startPointMultiplier + controlPoint[0] * controlPointMultiplier + endPoint[0] * endPointMultiplier,
+        startPoint[1] * startPointMultiplier + controlPoint[1] * controlPointMultiplier + endPoint[1] * endPointMultiplier
+    ];
 }
