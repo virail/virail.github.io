@@ -94,6 +94,8 @@
     --border-width: 2px;
     --border-colour: var(--main-colour);
     --border: solid var(--border-width) var(--border-colour);
+    --hover-duration: 200ms;
+    --hover-base-duration: 25ms;
 }
 
 /* .app { */
@@ -141,10 +143,24 @@
 }
 
 .svg {
+    --rect-fill: var(--main-colour);
+    --path-fill: white;
     padding: var(--padding);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all var(--hover-base-duration);
+    background-color: var(--bg-colour);
+    display: flex;
+}
+
+.svg:hover {
+    --rect-fill: white;
+    --path-fill: var(--main-colour);
+    color: var(--bg-colour);
+    background-color: var(--main-colour);
+    transition: all var(--hover-base-duration);
+    cursor: default;
 }
 
 .card > svg {
@@ -236,14 +252,14 @@
     padding: calc(var(--padding));
     /* border-radius: var(--border-radius); */
     border: var(--border);
-    transition-duration: 250ms;
+    transition-duration: var(--hover-duration);
 }
 
 .tag:hover {
     background-color: var(--main-colour);
     color: var(--bg-colour);
     transition: all;
-    transition-duration: 50ms;
+    transition-duration: var(--hover-base-duration);
     cursor: default;
 }
 
@@ -361,7 +377,7 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    transition: all 250ms;
+    transition: all var(--hover-duration);
 }
 
 .button-link:hover {
